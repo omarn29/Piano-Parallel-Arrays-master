@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
 
 public class Key extends Actor
@@ -20,7 +21,7 @@ public class Key extends Actor
 
         setImage(notPressed + ".png");
     }
-    
+
     /**
      * Create a new key.
      */
@@ -28,7 +29,6 @@ public class Key extends Actor
     {
     }
 
-    
     /**
      * Do the action for this key.
      */
@@ -49,8 +49,7 @@ public class Key extends Actor
 
             isDown = false;
         }
-        
-        System.out.println(pNum);
+
     }
 
     /**
@@ -61,16 +60,26 @@ public class Key extends Actor
     private void play()
     {
         Greenfoot.playSound( sound + ".wav" );
-        
+
         if( key.equals("p") )
         {
             pNum++;
-            
+
             if( pNum == 4 )
             {
                 repeatSound.playLoop();
             }
         }
+    }
+
+    /**
+     * checkDown returns the isDown value when it is called 
+     * @param There is no paramters
+     * @return isDown is returned when checkDown is true 
+     */
+    public boolean checkDown() 
+    {
+        return isDown;
     }
 }
 
